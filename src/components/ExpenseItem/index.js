@@ -1,13 +1,14 @@
 import React from 'react'
 import './styles.css';
 
-export default function ExpenseItem() {
+export default function ExpenseItem(props) {
+
     return (
         <div className="expense-item"> 
-            <div>13 de Março de 2021</div>
+            <div>{props.date.toUTCString()}</div>
             <div className="expense-item__description">
-            <h2>Seguro Veicular</h2>
-            <div className="expense-item__price">R$ 295,67</div>
+            <h2>{props.title}</h2>
+            <div className="expense-item__price">R$ {props.amount}</div>
             </div>
         </div>
     )
