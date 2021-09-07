@@ -19,8 +19,9 @@ export default function Expenses(props) {
     return (
         <Card className="expenses">
             <ExpensesFilter selectFilter={handleFilterChange} selectedYear={selectedYear} />
-            {props.expenses ? props.expenses.map(item =>
-                <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date} />) : ''}
+            {props.expenses.length > 0 ? props.expenses.map(item =>
+                <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date} />) 
+                : <h2 style={{color: 'white', textAlign: 'center'}}>Nenhuma despesa salva</h2>}
 
         </Card>
     )
